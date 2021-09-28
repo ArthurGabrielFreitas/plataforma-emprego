@@ -1,0 +1,118 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Empregados",
+  "info": {
+    "name": "employees",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "EMPLOYEE_ID": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "unique": true,
+      "required": true
+    },
+    "FIRST_NAME": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "LAST_NAME": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "maxLength": 25,
+      "minLength": 3
+    },
+    "EMAIL": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "email",
+      "default": "exemple@exemple.com",
+      "required": true
+    },
+    "PHONE_NUMBER": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "HIRE_DATE": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date",
+      "required": true
+    },
+    "SALARY": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "decimal",
+      "required": true
+    },
+    "COMISSION_PCT": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "decimal",
+      "required": false
+    },
+    "MANAGER_ID": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "required": true
+    },
+    "DEPARTMENT_ID": {
+      "via": "EMPLOYEES",
+      "model": "departments"
+    },
+    "job_history": {
+      "via": "employees_ids",
+      "model": "job-history"
+    },
+    "JOB_ID": {
+      "via": "employees",
+      "model": "jobs"
+    }
+  }
+}

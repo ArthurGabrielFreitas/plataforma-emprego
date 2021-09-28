@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_id_relations",
+  "info": {
+    "name": "Relations",
+    "icon": "exclamation-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "DEPARTMENT_ID": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    }
+  }
+}

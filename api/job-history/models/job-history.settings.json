@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Job_history",
+  "info": {
+    "name": "job_history",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "START_DATE": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date",
+      "required": true,
+      "unique": false
+    },
+    "END_DATE": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date"
+    },
+    "department_id": {
+      "model": "departments",
+      "via": "job_histories"
+    },
+    "job": {
+      "via": "job_histories",
+      "model": "jobs"
+    },
+    "employees_ids": {
+      "collection": "employees",
+      "via": "job_history"
+    }
+  }
+}
